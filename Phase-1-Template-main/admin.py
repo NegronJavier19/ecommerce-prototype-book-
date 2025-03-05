@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, request, session, url_for
+from models import db, Product, Customer
 from backend_controller.loginController import *
 from backend_controller.ordersController import ordersController, getorder, getorderproducts
 from backend_controller.productsController import *
@@ -6,14 +7,14 @@ from backend_controller.accountsController import *
 from backend_controller.reportsController import getDatedReport, getStockReport
 from backend_controller.profileController import *
 
-app = Flask(__name__, template_folder='backend/', static_folder='static')
+app = Flask(__name__, template_folder='frontend/templates', static_folder='frontend/static')
 app.secret_key = 'akeythatissecret'
 
 
 @app.route("/", defaults={'message': None})
 @app.route("/<message>")
 def enterpage(message):
-    return render_template('login (2).html', message=message)
+    return render_template('login.html', message=message)
 
 
 @app.route("/clear")
@@ -36,10 +37,9 @@ def profile():
     return render_template("profile.html", user1=admin)
 
 
-@app.route("/products")
-def products():
-    productsp = getProducts()
-    return render_template("products.html", products=productsp)
+#@app.route("/products")
+##   productsp = getProducts()
+  #  return render_template("products.html", products=productsp) -->
 
 
 @app.route("/orders")
@@ -72,6 +72,21 @@ def report():
         total = sum(order['total_price'] for order in date_report.values())
 
     return render_template("report.html", date_report=date_report, stock_report=stock_report, total=total)
+
+@app.route("/createproduct", methods=['POST'])
+def createproduct():
+    name = request.form.get('name')
+    category = request.form.get('category')
+    price = float(request.form.get('price'))
+    stock = int(request.form.get('stock'))
+    description = request.form.get('description')
+
+    new_product = Product(name=name, category=category, price=price, stock=stock, description=description)
+
+    db.session.add(new_product)
+    db.session.commit()
+
+    return redirect('/products')
 
 
 

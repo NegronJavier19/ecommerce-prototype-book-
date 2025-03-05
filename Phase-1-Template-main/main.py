@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template, redirect, request, session
-from models import db, Product
+from models import db, Product, Customer
 from frontend_controller.cartController import getCart, addCartController, deleteCartItem
 from frontend_controller.checkoutController import getUserCheckout
 from frontend_controller.invoiceController import getOrder, getOrderProducts
@@ -27,7 +27,7 @@ with app.app_context():
 @app.route("/", defaults={'message': None})
 @app.route("/<message>")
 def enterpage(message):
-    return render_template('login(2).html', message=message)  # Ensure this template exists
+    return render_template('login.html', message=message)  # Ensure this template exists
 
 
 # ✅ Logout & Clear Session
@@ -37,21 +37,19 @@ def clear():
     return redirect("/")
 
 
-# ✅ User Login Route
+#  User Login Route
 @app.route("/login", methods=['POST'])
 def login():
     email = request.form.get('email')
     passcode = request.form.get('password')
-    session['amount'] = 0
+
+    if not email or not passcode:
+        return redirect("/")  
+
     return logincontroller(email=email, password=passcode)
 
 
-# ✅ User Registration Routes
-@app.route("/register/", defaults={'message': None})
-@app.route('/register/<message>')
-def register(message):
-    return render_template('register.html', message=message)
-
+# User Registration Routes
 
 @app.route("/registerinfo", methods=['POST'])
 def registerinfo():
@@ -61,26 +59,46 @@ def registerinfo():
     pass1 = request.form.get('pass1')
     pass2 = request.form.get('pass2')
 
-    if pass1 == pass2:
-        session['amount'] = 0
-        email = 'javier.negron11@upr.edu'
-        passcode = 'Jav@0000'
-        logincontroller(email=email, password=passcode)
-        return redirect('/shop')
-    else:
-        return redirect('/register/error')
+    if pass1 != pass2:
+        return redirect('/register/error')  # Redirect if passwords don't match
+
+    # Check if the user already exists
+    existing_user = Customer.query.filter_by(email=email).first()
+    if existing_user:
+        return redirect('/register/error-user-exists')  
+
+    # Save new user to database
+    new_user = Customer(name=f"{fname} {lname}", email=email, password=pass1)
+    db.session.add(new_user)
+    db.session.commit()
+
+    session['customer'] = email
+    return redirect('/shop')
 
 
-# ✅ Shop Page Route (Fixed)
+#  Shop Page Route 
 @app.route("/shop")
+
 def shop():
-    products = getProducts()
-    getCart()  # Ensures cart session is initialized
+    sort_by = request.args.get('sort', 'name')  
+    order = request.args.get('order', 'asc')  
 
-    return render_template("shop-4column.html", products=products)
+    if sort_by == "price":
+        if order == "asc":
+            products = Product.query.order_by(Product.price.asc()).all()
+        else:
+            products = Product.query.order_by(Product.price.desc()).all()
+    else:
+        if order == "asc":
+            products = Product.query.order_by(Product.name.asc()).all()
+        else:
+            products = Product.query.order_by(Product.name.desc()).all()
+
+    return render_template("shop.html", products=products)
 
 
-# ✅ User Profile Route
+
+#  User Profile Route
 @app.route("/profile")
 def profile():
     if 'customer' not in session:
