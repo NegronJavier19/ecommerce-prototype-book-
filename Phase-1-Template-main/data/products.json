@@ -1,0 +1,255 @@
+[
+    {
+        "id": 1,
+        "name": "Battlefield Earth",
+        "category": "Science Fiction",
+        "price": 33.97,
+        "stock": 1,
+        "description": "A Fantastical Thriller ride...."
+    },
+    {
+        "id": 2,
+        "name": "It: A Novel",
+        "category": "Horror",
+        "price": 9.99,
+        "stock": 1,
+        "description": "A Terrifying story..."
+    },
+    {
+        "id": 3,
+        "name": "The Hobbit",
+        "category": "Fantasy",
+        "price": 10.69,
+        "stock": 1,
+        "description": "The journey of Bilbo Baggins in Middle-earth."
+    },
+
+    {
+        "id": 4,
+        "name": "Batman: The Killing Joke",
+        "category": "Graphic's novels",
+        "price": 100.00,
+        "stock": 1,
+        "description": "One of the most famous batman stories ever told..."
+    },
+
+    {
+        "id": 5,
+        "name": "Death of Superman",
+        "category": "Graphic's novels",
+        "price": 3.75,
+        "stock": 1,
+        "description": "An Unforgettable hearthrenching story..."
+    },
+
+    {
+        "id": 6,
+        "name": "Watchmen",
+        "category": "Graphic's novels",
+        "price": 25.99,
+        "stock": 1,
+        "description": "a groundbreaking dark and complex world of emotions..."
+    },
+
+    {
+        "id": 7,
+        "name": "Little Red Ridding Hood",
+        "category": "Children's books",
+        "price": 39.99,
+        "stock": 1,
+        "description": "A timeless fairytale about choices..."
+    },
+
+    {
+        "id": 8,
+        "name": "The Ugly Duckling",
+        "category": "Children's books",
+        "price": 19.99,
+        "stock": 1,
+        "description": "A heartwarming story about society..."
+    },
+
+    {
+        "id": 9,
+        "name": "Ms Rachel and The Special Suprise",
+        "category": "Children's books",
+        "price": 19.99,
+        "stock": 1,
+        "description": "A delightful story with kindness..."
+    },
+
+    {
+        "id": 10,
+        "name": "Game of Thrones: A Song of Ice and Fire",
+        "category": "Fantasy",
+        "price": 18.00,
+        "stock": 1,
+        "description": "An epic story filled with betrayals and drama..."
+    },
+
+    {
+        "id": 11,
+        "name": "Game of Thrones: The World of Ice and Fire",
+        "category": "Fantasy",
+        "price": 23.80,
+        "stock": 1,
+        "description": "A Comprehensive history of knights and adventures..."
+    },
+
+    
+
+    {
+        "id": 12,
+        "name": "Harry potter and the Philosopher's Stone",
+        "category": "Fantasy",
+        "price": 50.00,
+        "stock": 1,
+        "description": "A Magical adventure filled with awe and wizardrey..."
+    },
+
+    {
+        "id": 13,
+        "name": "Dune",
+        "category": "Science Fiction",
+        "price": 9.05,
+        "stock": 1,
+        "description": "A Sci-fi masterpiece filled with intrigue..."
+    },
+
+    {
+        "id": 14,
+        "name": "Jaws",
+        "category": "Science Fiction",
+        "price": 20.49,
+        "stock": 1,
+        "description": "A Terrifying Thriller ride filled with gore..."
+    },
+
+    {
+        "id": 15,
+        "name": "Anne Frank: The Diary of a Young Girl",
+        "category": "History",
+        "price": 69.99,
+        "stock": 1,
+        "description": "A powerful anecdote about a dark time in history..."
+    },
+
+    {
+        "id": 16,
+        "name": "To Kill a Mocking Bird",
+        "category": "History",
+        "price": 10.98,
+        "stock": 1,
+        "description": "A profound story about injustice and loss of innocence..."
+    },
+
+    {
+        "id": 17,
+        "name": "War and Peace",
+        "category": "History",
+        "price": 19.01,
+        "stock": 1,
+        "description": "A masterpiece that explores life during the napoleonitic wars..."
+    },
+
+    {
+        "id": 18,
+        "name": "Love Story",
+        "category": "Romance",
+        "price": 10.86,
+        "stock": 1,
+        "description": "a timeless romance that explores relationship drama..."
+    },
+
+    {
+        "id": 19,
+        "name": "Gone With The Wind",
+        "category": "Romance",
+        "price": 24.84,
+        "stock": 1,
+        "description": "An award winning classic that navigates love and the meaning of it..."
+    },
+
+    {
+        "id": 20,
+        "name": "The Bridges of Madison County",
+        "category": "Romance",
+        "price": 7.29,
+        "stock": 1,
+        "description": "An Unforgetable love story about how a chance encounter leads to love..."
+    },
+
+    {
+        "id": 21,
+        "name": "Pride and Prejudice",
+        "category": "Classic's",
+        "price": 35.64,
+        "stock": 1,
+        "description": "a timeless novel that follows love, comedy and societal problems"
+    },
+
+    {
+        "id": 22,
+        "name": "The Lord of the Rings: The Fellowship of the Ring",
+        "category": "Classic's",
+        "price": 20.00,
+        "stock": 1,
+        "description": "A legendary epic tale about fellowship and heroes..."
+    },
+
+    {
+        "id": 23,
+        "name": "The Lord of the Rings Part Two: The Two Towers",
+        "category": "Classic's",
+        "price": 12.99,
+        "stock": 1,
+        "description": "a sequel to the legendary tale now with courage,battles and friendship..."
+    },
+
+    {
+        "id": 24,
+        "name": "The Maze Runner",
+        "category": "New Arrivals",
+        "price": 7.99,
+        "stock": 1,
+        "description": "A Mysterious yet intriguing tale filled with mystery..."
+    },
+
+    {
+        "id": 25,
+        "name": "Pet Sematary",
+        "category": "Horror",
+        "price": 30.00,
+        "stock": 1,
+        "description": "A Chilling tale about grief, death and horror..."
+    },
+
+    {
+        "id": 26,
+        "name": "Frankenstein",
+        "category": "Horror",
+        "price": 14.99,
+        "stock": 1,
+        "description": "A timeless gothic novel that explores science and its morality..."
+    },
+
+    {
+        "id": 27,
+        "name": "The Hunger Games",
+        "category": "Classic's",
+        "price": 7.98,
+        "stock": 1,
+        "description": "A brutal dystopian tale about survival..."
+    },
+
+    {
+        "id": 28,
+        "name": "A Woman's Room",
+        "category": "Biographies",
+        "price": 12.99,
+        "stock": 1,
+        "description": "a thought provoking novel about a womans's discovery..."
+    }
+
+
+]

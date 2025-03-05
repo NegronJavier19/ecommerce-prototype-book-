@@ -528,12 +528,14 @@
          }
         </script>
 
-        <script>
-            window.onload = function(){
-                document.getElementById('submit').onclick = function(){
-                    document.getElementById('quantity').value = document.getElementById('quantity1').value;
-            };
-        </script>
+<script>
+    window.onload = function(){
+        document.getElementById('submit').onclick = function(){
+            document.getElementById('quantity').value = document.getElementById('quantity1').value;
+        };
+    };  <!-- ✅ Added closing bracket -->
+</script>
+
 
         <script>
             function onlyOne(checkbox) {
@@ -548,3 +550,5 @@
         =======================================-->
     </body>
 </html>
+
+

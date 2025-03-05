@@ -28,7 +28,7 @@
                     CSS LINK PART START
         =======================================-->
         <!-- FAVICON -->
-        <link rel="icon" href="{{url_for('static', filename='images/favicon.png')}}">
+        <link rel="icon" href="{{url_for('static', filename='images/favicon')}}">
 
         <!-- FONTS -->
         <link rel="stylesheet" href="{{url_for('static', filename='fonts/flaticon/flaticon.css')}}">
@@ -62,9 +62,9 @@
                         <div class="user-form-card">
                             <div class="user-form-title">
                                 <h2>welcome!</h2>
-                                <p>Use your credentials to access</p>
+                                <p>Become a part of our community!</p>
                                   {% if message != None %}
-                            <h2 style="color: red">Login credentials are incorrect. Please try again.</h2>
+                            <h2 style="color: red">Your login Information incorrect. Please try again.</h2>
                             {% endif %}
                             </div>
 
